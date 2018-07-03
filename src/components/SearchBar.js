@@ -1,5 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
+import {store} from "../index";
+import {addFilteredClient, removeAllFiltered} from "../store/actions";
 
 class SearchBar extends React.Component {
     constructor() {
@@ -19,8 +21,11 @@ class SearchBar extends React.Component {
 
     handleInput(e) {
         this.inputValue = e.target.value;
-        let filterClients = this.filterClients();
-        console.log(filterClients);
+        let filteredClients = this.filterClients();
+        if (filteredClients.length > 0) {
+            store.dispatch(removeAllFiltered());
+            store.dispatch(addFilteredClient(filteredClients));
+        }
     }
 
     filterClients() {
@@ -45,7 +50,8 @@ class SearchBar extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        clients: state.clients
+        clients: state.clients,
+        filteredClients: state.filteredClients
     }
 }
 

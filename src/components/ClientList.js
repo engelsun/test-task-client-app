@@ -2,8 +2,9 @@ import React from "react";
 import axios from "axios";
 import ClientListItem from "./ClientListItem";
 import {store} from "../index";
-import addClients from "../store/actions";
+peimport {addClients} from "../store/actions";
 import {connect} from "react-redux";
+import filteredClients from "../store/reducers/filteredClients";
 
 const link = "http://www.mocky.io/v2/5b35c5e62f00006e003763b7";
 
@@ -12,6 +13,10 @@ class ClientList extends React.Component {
     state = {
         // clients: []
     };
+
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
+    }
 
     render() {
         return (
@@ -34,7 +39,8 @@ class ClientList extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        clients: state.clients
+        clients: state.clients,
+        filteredClients: state.filteredClients
     }
 }
 
