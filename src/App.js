@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import ClientList from "./components/ClientList";
 import SearchBar from "./components/SearchBar";
+import ClientDetails from "./components/ClientDetails";
 
 class App extends Component {
     render() {
@@ -15,9 +16,7 @@ class App extends Component {
                         </div>
                     </div>
                     <div className="column">
-                        <div className="ui segment">
-                            <p></p>
-                        </div>
+                        <ClientDetails/>
                     </div>
                 </div>
             </div>
