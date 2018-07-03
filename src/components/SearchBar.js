@@ -1,4 +1,5 @@
 import React from "react";
+import {connect} from "react-redux";
 
 class SearchBar extends React.Component {
     constructor() {
@@ -17,8 +18,13 @@ class SearchBar extends React.Component {
 
     handleInput(e) {
         this.inputValue = e.target.value;
-
     }
 }
 
-export default SearchBar;
+function mapStateToProps(state) {
+    return {
+        clients: state.clients
+    }
+}
+
+export default connect(mapStateToProps)(SearchBar);

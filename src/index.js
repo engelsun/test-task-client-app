@@ -8,7 +8,7 @@ import './index.css';
 import App from './App';
 import allReducers from "./store/reducers/allReducers";
 
-const store = createStore(allReducers);
+export const store = createStore(allReducers);
 
 ReactDOM.render(
     <Provider store={store}>
