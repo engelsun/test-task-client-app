@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
         if (filteredClients.length > 0) {
             store.dispatch(removeAllFiltered());
             store.dispatch(addFilteredClient(filteredClients));
-        }
+        } else store.dispatch(removeAllFiltered());
     }
 
     filterClients() {

@@ -2,26 +2,38 @@ import React from "react";
 import axios from "axios";
 import ClientListItem from "./ClientListItem";
 import {store} from "../index";
-peimport {addClients} from "../store/actions";
+import {addClients} from "../store/actions";
 import {connect} from "react-redux";
-import filteredClients from "../store/reducers/filteredClients";
 
 const link = "http://www.mocky.io/v2/5b35c5e62f00006e003763b7";
 
 class ClientList extends React.Component {
 
     state = {
-        // clients: []
+        isFirstRender: true,
+        renderClients: []
     };
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
+        this.setState({
+            renderClients: this.checkBeforeRendering(nextProps)
+        });
+    }
+
+    checkBeforeRendering(nextProps) {
+        const {clients, filteredClients} = nextProps;
+        let renderClients;
+        if (this.state.isFirstRender) {
+            renderClients = clients;
+            this.setState({isFirstRender: false})
+        } else renderClients = filteredClients;
+        return renderClients;
     }
 
     render() {
         return (
             <div className="ui divided list">
-                {this.props.clients.map((client, index) =>
+                {this.state.renderClients.map((client, index) =>
                     <ClientListItem client={client} key={index}/>)}
             </div>
         )
