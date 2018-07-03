@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import ClientListItem from "./ClientListItem";
 
 const link = "http://www.mocky.io/v2/5b35c5e62f00006e003763b7";
 
@@ -12,14 +13,8 @@ class ClientList extends React.Component {
     render() {
         return (
             <div className="ui divided list">
-                {this.state.clients.map(client =>
-                    <div className="item">
-                        <img className="ui circular tiny image" src={client.general.avatar}/>
-                        <div className="content">
-                            <h1 className="header">{client.general.firstName} {client.general.lastName}</h1>
-                            <div className="description">{client.job.title}</div>
-                        </div>
-                    </div>)}
+                {this.state.clients.map((client, index) =>
+                    <ClientListItem client={client} key={index}/>)}
             </div>
         )
     }
