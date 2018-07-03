@@ -6,6 +6,7 @@ class SearchBar extends React.Component {
         super();
         this.inputValue = "";
     }
+
     render() {
         return (
             <div className="ui icon input fluid">
@@ -18,6 +19,27 @@ class SearchBar extends React.Component {
 
     handleInput(e) {
         this.inputValue = e.target.value;
+        let filterClients = this.filterClients();
+        console.log(filterClients);
+    }
+
+    filterClients() {
+        return this.props.clients.filter(person => {
+            if (this.isClientContains(person.general.firstName)) return person;
+            if (this.isClientContains(person.job.company)) return person;
+            if (this.isClientContains(person.job.title)) return person;
+            if (this.isClientContains(person.contact.email)) return person;
+            if (this.isClientContains(person.contact.phone)) return person;
+            if (this.isClientContains(person.address.street)) return person;
+            if (this.isClientContains(person.address.city)) return person;
+            if (this.isClientContains(person.address.zipCode)) return person;
+            if (this.isClientContains(person.address.country)) return person;
+        });
+    }
+
+    isClientContains(clientInfo) {
+        let regXp = this.inputValue.toLowerCase();
+        return clientInfo.toLowerCase().includes(regXp);
     }
 }
 
