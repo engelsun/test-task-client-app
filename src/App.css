@@ -1,0 +1,14 @@
+.ui .column {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+
+.ui.container {
+    margin-top: 50px;
+    height: 600px;
+}
+
+.ui .segment {
+    overflow: auto;
+    background: whitesmoke;
+}
