@@ -13,7 +13,7 @@ class SearchBar extends React.Component {
         return (
             <div className="ui icon input fluid">
                 <input className="prompt" onInput={this.handleInput.bind(this)} type="text"
-                       placeholder="Enter some info about client to search..."/>
+                       placeholder="Enter some info about the client to search..."/>
                 <i className="search icon"/>
             </div>
         )

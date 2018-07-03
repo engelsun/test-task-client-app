@@ -7,15 +7,15 @@ import ClientDetails from "./components/ClientDetails";
 class App extends Component {
     render() {
         return (
-            <div className="ui equal width centered grid container">
+            <div className="ui centered grid container">
                 <div className="stretched row">
-                    <div className=" six wide column">
+                    <div className="six wide column">
                         <div className="ui segment">
                             <SearchBar/>
                             <ClientList/>
                         </div>
                     </div>
-                    <div className="column">
+                    <div className="ten wide column">
                         <ClientDetails/>
                     </div>
                 </div>

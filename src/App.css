@@ -12,3 +12,66 @@
     overflow: auto;
     background: whitesmoke;
 }
+
+.detail-segment .info{
+    width: 60%;
+}
+
+.detail-segment .column {
+    margin-left: 26px !important;
+    margin-top: 20px !important;
+    margin-right: -30px !important;
+}
+
+.detail-segment .info {
+    margin-top: 33px !important;
+}
+
+.general .header {
+    font-size: 40px;
+    margin: 0;
+}
+
+.general .description {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.info .contacts .segment {
+    padding: 10px;
+    padding-top: 15px;
+}
+
+.info .address .segment {
+    padding: 10px;
+    padding-top: 15px;
+}
+
+.address .segment > * {
+    margin: 10px;
+}
+
+.address .column {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+.contacts .grid > * {
+    margin-right: -18px;
+}
+
+.address .grid > * {
+    margin-right: -18px;
+}
+
+.contacts .segment > * {
+    margin: 10px;
+}
+
+.ui.segment .empty-selected-client {
+    margin-top: 30%;
+}
+
+.item {
+    cursor: pointer;
+}
