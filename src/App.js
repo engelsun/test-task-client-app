@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import SearchBar from "./components/SearchBar";
-import ClientDetails from "./components/ClientDetails";
 import ClientListContainer from "./components/ClientListContainer";
+import ClientDetailsContainer from "./components/ClientDetailsContainer";
 
 class App extends Component {
     render() {
@@ -16,7 +16,7 @@ class App extends Component {
                         </div>
                     </div>
                     <div className="ten wide column">
-                        <ClientDetails/>
+                        <ClientDetailsContainer/>
                     </div>
                 </div>
             </div>

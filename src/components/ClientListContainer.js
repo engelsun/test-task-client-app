@@ -5,7 +5,6 @@ import {loadClients} from "../controller/axiosController";
 import {getFilteredClients} from "../store/reducers/clientFilter";
 
 class ClientListContainer extends React.Component {
-
     componentWillMount() {
         loadClients();
     }

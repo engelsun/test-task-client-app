@@ -1,12 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux';
 
 class ClientDetails extends React.Component {
     render() {
-        const client = this.props.selectedClient;
-        if (client.length === 0)
-            return (<div className="ui segment"><h1 className="ui centered header empty-selected-client">Please choose a client</h1></div>);
-        else return (
+        const client = this.props.client;
+        return (
             <div className="ui segment detail-segment">
                 <div className="ui grid">
                     <div className="five wide column">
@@ -58,10 +55,4 @@ class ClientDetails extends React.Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        selectedClient: state.selectedClient
-    }
-}
-
-export default connect(mapStateToProps)(ClientDetails);
+export default ClientDetails;
