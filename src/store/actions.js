@@ -1,13 +1,11 @@
 const ADD_CLIENTS = "ADD_CLIENTS";
-const ADD_FILTERED_CLIENT = "ADD_FILTERED_CLIENT";
-const REMOVE_ALL_FILTERED = "REMOVE_ALL_FILTERED";
 const ADD_SELECTED_CLIENT = "ADD_SELECTED_CLIENT";
+const ADD_SEARCH_TEXT = "ADD_SEARCH_TEXT";
 
 export {
     ADD_CLIENTS,
-    ADD_FILTERED_CLIENT,
-    REMOVE_ALL_FILTERED,
-    ADD_SELECTED_CLIENT
+    ADD_SELECTED_CLIENT,
+    ADD_SEARCH_TEXT
 }
 
 export function addClients(clients) {
@@ -17,16 +15,10 @@ export function addClients(clients) {
     }
 }
 
-export function addFilteredClient(clients) {
+export function addSearchText(searchText) {
     return {
-        type: ADD_FILTERED_CLIENT,
-        payload: clients
-    }
-}
-
-export function removeAllFiltered() {
-    return {
-        type: REMOVE_ALL_FILTERED
+        type: ADD_SEARCH_TEXT,
+        payload: searchText
     }
 }
 

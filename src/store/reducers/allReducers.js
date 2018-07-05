@@ -1,11 +1,11 @@
 import {combineReducers} from "redux";
 import clients from "./clients";
-import filteredClients from "./filteredClients";
+import clientFilter from "./clientFilter";
 import selectedClient from "./selectedClient";
 
 const allReducers = combineReducers({
     clients: clients,
-    filteredClients: filteredClients,
+    clientFilter: clientFilter,
     selectedClient: selectedClient
 });
 
